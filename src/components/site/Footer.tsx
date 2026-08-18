@@ -1,5 +1,6 @@
 import { Mail, MapPin, Phone } from "lucide-react";
-import logo from "@/assets/a1-logo.png";
+import logoAsset from "@/assets/a1-logo.png.asset.json";
+const logo = logoAsset.url;
 import { FOOTER_EMAIL, PHONE } from "./site-data";
 
 const QUICK_LINKS = [
