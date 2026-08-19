@@ -231,7 +231,12 @@ function AdminPanel() {
 
       <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-7">
-          <StatCard label="Total" value={counts.total} active={statusFilter === "all"} onClick={() => setStatusFilter("all")} />
+          <StatCard
+            label="Total"
+            value={counts["total"] ?? 0}
+            active={statusFilter === "all"}
+            onClick={() => setStatusFilter("all")}
+          />
           {STATUSES.map((status) => (
             <StatCard
               key={status.value}
