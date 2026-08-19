@@ -13,9 +13,9 @@ import { Faq, FAQS } from "@/components/site/Faq";
 import { Footer } from "@/components/site/Footer";
 import { MobileActionBar } from "@/components/site/MobileActionBar";
 
-const TITLE = "A1 Global Financial Consultant | Personal, Business & Home Loans";
+const TITLE = "A1 Global Financial Consultant | Personal, Business, Home & Car Loans";
 const DESCRIPTION =
-  "A1 Global Financial Consultant provides personalized guidance for personal loans, business loans, home loans and loan against property in Mumbai and Palghar.";
+  "A1 Global Financial Consultant provides personalized guidance for personal loans, business loans, home loans, car loans and loan against property in Mumbai and Palghar.";
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -62,7 +62,7 @@ export const Route = createFileRoute("/")({
       {
         name: "keywords",
         content:
-          "loan consultant Mumbai, personal loan consultant Mumbai, business loan consultant Mumbai, home loan consultant Mumbai, loan against property Mumbai, loan consultant Goregaon, loan consultant Nalasopara, financial consultant Palghar",
+          "loan consultant Mumbai, personal loan consultant Mumbai, business loan consultant Mumbai, home loan consultant Mumbai, car loan consultant Mumbai, loan against property Mumbai, loan consultant Goregaon, loan consultant Nalasopara, financial consultant Palghar",
       },
     ],
     scripts: [
