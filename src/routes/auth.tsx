@@ -46,7 +46,10 @@ function AuthPage() {
       password: String(form.get("password")),
     });
     setLoading(false);
-    if (error) return toast.error(error.message);
+    if (error) {
+      toast.error(error.message);
+      return;
+    }
     navigate({ to: "/admin" });
   };
 
@@ -60,7 +63,10 @@ function AuthPage() {
       options: { emailRedirectTo: `${window.location.origin}/admin` },
     });
     setLoading(false);
-    if (error) return toast.error(error.message);
+    if (error) {
+      toast.error(error.message);
+      return;
+    }
     toast.success("Account created. You can sign in now.");
   };
 
