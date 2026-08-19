@@ -15,7 +15,13 @@ import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 import { EMAIL, PHONE, WHATSAPP_URL } from "./site-data";
 
-const LOAN_TYPES = ["Personal Loan", "Business Loan", "Home Loan", "Loan Against Property"];
+const LOAN_TYPES = [
+  "Personal Loan",
+  "Business Loan",
+  "Home Loan",
+  "Car Loan",
+  "Loan Against Property",
+];
 const EMPLOYMENT_TYPES = ["Salaried", "Self Employed", "Business Owner", "Other"];
 const PREFERRED_LOCATIONS = [
   "Goregaon West, Mumbai",
