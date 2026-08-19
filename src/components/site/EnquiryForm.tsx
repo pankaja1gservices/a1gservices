@@ -14,6 +14,8 @@ import {
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
 import { EMAIL, PHONE, WHATSAPP_URL } from "./site-data";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 const LOAN_TYPES = [
   "Personal Loan",
@@ -38,9 +40,26 @@ export function EnquiryForm() {
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const form = new FormData(event.currentTarget);
     setSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 700));
+    const { error } = await supabase.from("leads").insert({
+      name: String(form.get("name") ?? "").trim(),
+      mobile: String(form.get("mobile") ?? "").trim(),
+      email: String(form.get("email") ?? "").trim(),
+      loan_type: loanType || null,
+      amount: String(form.get("amount") ?? "").trim() || null,
+      employment: employment || null,
+      location: location || null,
+      message: String(form.get("message") ?? "").trim() || null,
+    });
     setSubmitting(false);
+    if (error) {
+      toast.error("We couldn't submit your enquiry. Please try again or call us.");
+      return;
+    }
+    setLoanType("");
+    setEmployment("");
+    setLocation("");
     setSubmitted(true);
   };
 
