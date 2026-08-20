@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import logoAsset from "@/assets/a1-logo.png.asset.json";
+import logoAsset from "@/assets/a1-logo-v2.png.asset.json";
 const logo = logoAsset.url;
 import { NAV_LINKS, PHONE } from "./site-data";
 
