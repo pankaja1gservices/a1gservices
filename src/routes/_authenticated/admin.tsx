@@ -99,7 +99,8 @@ function AdminPanel() {
 
   useEffect(() => {
     setNotesDraft(selected?.notes ?? "");
-  }, [selected]);
+    // keyed by id so background refreshes don't wipe unsaved notes
+  }, [selected?.id]);
 
   const { data: leads = [], isLoading, isError, refetch, isFetching } = useQuery({
     queryKey: ["leads"],
