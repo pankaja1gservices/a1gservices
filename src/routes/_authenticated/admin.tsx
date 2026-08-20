@@ -113,8 +113,35 @@ function AdminPanel() {
     },
   });
 
-  const updateLead = useMutation({
+  // Live sync: new/updated enquiries appear without a manual refresh
+  useEffect(() => {
+    const channel = supabase
+      .channel("leads-realtime")
+      .on(
+        "postgres_changes",
+        { event: "*", schema: "public", table: "leads" },
+        (payload) => {
+          queryClient.invalidateQueries({ queryKey: ["leads"] });
+          if (payload.eventType === "INSERT") {
+            const lead = payload.new as Lead;
+            toast.success(`New enquiry from ${lead.name}`);
+          }
+        },
+      )
+      .subscribe();
+    return () => {
+      void supabase.removeChannel(channel);
+    };
+  }, [queryClient]);
 
+  // Keep the open lead detail in sync with refreshed data
+  useEffect(() => {
+    if (!selected) return;
+    const fresh = leads.find((lead) => lead.id === selected.id);
+    if (fresh && fresh !== selected) setSelected(fresh);
+  }, [leads, selected]);
+
+  const updateLead = useMutation({
     mutationFn: async ({ id, patch }: { id: string; patch: Partial<Lead> }) => {
       const { error } = await supabase.from("leads").update(patch).eq("id", id);
       if (error) throw error;
