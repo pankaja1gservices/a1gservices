@@ -5,7 +5,6 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { toast } from "sonner";
 
 const TITLE = "Consultant Login | A1 Global Financial Consultant";
@@ -53,23 +52,6 @@ function AuthPage() {
     navigate({ to: "/admin" });
   };
 
-  const handleSignUp = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const form = new FormData(event.currentTarget);
-    setLoading(true);
-    const { error } = await supabase.auth.signUp({
-      email: String(form.get("email")),
-      password: String(form.get("password")),
-      options: { emailRedirectTo: `${window.location.origin}/admin` },
-    });
-    setLoading(false);
-    if (error) {
-      toast.error(error.message);
-      return;
-    }
-    toast.success("Account created. You can sign in now.");
-  };
-
   return (
     <main className="flex min-h-screen items-center justify-center bg-secondary/40 px-4 py-16">
       <div className="w-full max-w-md rounded-3xl border border-border/70 bg-card p-8 shadow-lift">
@@ -85,58 +67,29 @@ function AuthPage() {
           </p>
         </div>
 
-        <Tabs defaultValue="signin" className="mt-8">
-          <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="signin">Sign in</TabsTrigger>
-            <TabsTrigger value="signup">Create account</TabsTrigger>
-          </TabsList>
-          <TabsContent value="signin">
-            <form onSubmit={handleSignIn} className="mt-6 grid gap-4">
-              <div className="grid gap-2">
-                <Label htmlFor="si-email">Email</Label>
-                <Input id="si-email" name="email" type="email" required autoComplete="email" />
-              </div>
-              <div className="grid gap-2">
-                <Label htmlFor="si-password">Password</Label>
-                <Input
-                  id="si-password"
-                  name="password"
-                  type="password"
-                  required
-                  autoComplete="current-password"
-                />
-              </div>
-              <Button type="submit" variant="hero" size="xl" disabled={loading}>
-                {loading ? <Loader2 className="size-4 animate-spin" /> : null} Sign in
-              </Button>
-            </form>
-          </TabsContent>
-          <TabsContent value="signup">
-            <form onSubmit={handleSignUp} className="mt-6 grid gap-4">
-              <div className="grid gap-2">
-                <Label htmlFor="su-email">Email</Label>
-                <Input id="su-email" name="email" type="email" required autoComplete="email" />
-              </div>
-              <div className="grid gap-2">
-                <Label htmlFor="su-password">Password</Label>
-                <Input
-                  id="su-password"
-                  name="password"
-                  type="password"
-                  required
-                  minLength={6}
-                  autoComplete="new-password"
-                />
-              </div>
-              <Button type="submit" variant="hero" size="xl" disabled={loading}>
-                {loading ? <Loader2 className="size-4 animate-spin" /> : null} Create account
-              </Button>
-            </form>
-          </TabsContent>
-        </Tabs>
+        <form onSubmit={handleSignIn} className="mt-8 grid gap-4">
+          <div className="grid gap-2">
+            <Label htmlFor="si-email">Email</Label>
+            <Input id="si-email" name="email" type="email" required autoComplete="email" />
+          </div>
+          <div className="grid gap-2">
+            <Label htmlFor="si-password">Password</Label>
+            <Input
+              id="si-password"
+              name="password"
+              type="password"
+              required
+              autoComplete="current-password"
+            />
+          </div>
+          <Button type="submit" variant="hero" size="xl" disabled={loading}>
+            {loading ? <Loader2 className="size-4 animate-spin" /> : null} Sign in
+          </Button>
+        </form>
 
         <p className="mt-6 text-center text-xs text-muted-foreground">
-          Access is limited to authorised A1 Global consultants.
+          Access is limited to authorised A1 Global consultants. Accounts are issued by the
+          administrator — public sign-up is disabled.
         </p>
       </div>
     </main>
