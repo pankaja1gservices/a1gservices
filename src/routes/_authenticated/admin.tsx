@@ -114,6 +114,7 @@ function AdminPanel() {
   });
 
   const updateLead = useMutation({
+
     mutationFn: async ({ id, patch }: { id: string; patch: Partial<Lead> }) => {
       const { error } = await supabase.from("leads").update(patch).eq("id", id);
       if (error) throw error;
