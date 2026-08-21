@@ -1,6 +1,7 @@
 import { ArrowRight, ShieldCheck, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-finance.jpg";
+import { HeroVideo } from "./HeroVideo";
+import { Marquee } from "./Marquee";
 
 export function Hero() {
   return (
