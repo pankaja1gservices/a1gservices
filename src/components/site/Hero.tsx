@@ -49,15 +49,7 @@ export function Hero() {
         </div>
 
         <div className="relative animate-in fade-in slide-in-from-bottom-8 duration-1000">
-          <div className="overflow-hidden rounded-3xl border border-border/70 shadow-lift">
-            <img
-              src={heroImage}
-              alt="Abstract premium financial growth illustration"
-              width={1280}
-              height={1280}
-              className="h-[22rem] w-full object-cover sm:h-[30rem]"
-            />
-          </div>
+          <HeroVideo />
           <div className="mx-auto -mt-14 w-[92%] rounded-2xl border border-border/70 bg-card/95 p-6 shadow-lift backdrop-blur-xl sm:absolute sm:-bottom-10 sm:-left-8 sm:mx-0 sm:mt-0 sm:w-80">
             <h2 className="font-display text-lg font-semibold text-primary">Need the right loan?</h2>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
