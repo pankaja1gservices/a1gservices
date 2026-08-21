@@ -18,16 +18,7 @@ export function Footer() {
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <div className="flex items-center gap-3">
-              <span className="flex size-11 items-center justify-center rounded-xl bg-navy-foreground/95 p-1.5">
-                <img
-                  src={logo}
-                  alt="A1 Global Financial Consultant logo"
-                  width={816}
-                  height={816}
-                  loading="lazy"
-                  className="h-full w-auto"
-                />
-              </span>
+              <Logo className="size-11" />
               <span className="font-display text-base font-semibold">A1 Global</span>
             </div>
             <p className="mt-4 text-sm text-navy-foreground/70">A1 Global Financial Consultant</p>
