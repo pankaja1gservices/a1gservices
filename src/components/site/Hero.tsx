@@ -63,6 +63,10 @@ export function Hero() {
           </div>
         </div>
       </div>
+
+      <div className="relative mt-20 sm:mt-24">
+        <Marquee />
+      </div>
     </section>
   );
 }
