@@ -1,6 +1,7 @@
 import { ArrowRight, ShieldCheck, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-finance.jpg";
+import { HeroVideo } from "./HeroVideo";
+import { Marquee } from "./Marquee";
 
 export function Hero() {
   return (
@@ -48,15 +49,7 @@ export function Hero() {
         </div>
 
         <div className="relative animate-in fade-in slide-in-from-bottom-8 duration-1000">
-          <div className="overflow-hidden rounded-3xl border border-border/70 shadow-lift">
-            <img
-              src={heroImage}
-              alt="Abstract premium financial growth illustration"
-              width={1280}
-              height={1280}
-              className="h-[22rem] w-full object-cover sm:h-[30rem]"
-            />
-          </div>
+          <HeroVideo />
           <div className="mx-auto -mt-14 w-[92%] rounded-2xl border border-border/70 bg-card/95 p-6 shadow-lift backdrop-blur-xl sm:absolute sm:-bottom-10 sm:-left-8 sm:mx-0 sm:mt-0 sm:w-80">
             <h2 className="font-display text-lg font-semibold text-primary">Need the right loan?</h2>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
@@ -69,6 +62,10 @@ export function Hero() {
             </Button>
           </div>
         </div>
+      </div>
+
+      <div className="relative mt-20 sm:mt-24">
+        <Marquee />
       </div>
     </section>
   );
