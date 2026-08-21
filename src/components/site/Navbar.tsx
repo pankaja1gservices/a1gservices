@@ -33,11 +33,7 @@ export function Navbar() {
         )}
       >
         <a href="#home" className="flex items-center gap-3">
-          <img
-            src={logo}
-            alt="A1 Global Financial Consultant logo"
-            width={816}
-            height={816}
+          <Logo
             className={cn("w-auto transition-all duration-300", scrolled ? "h-9" : "h-11")}
           />
           <span className="flex flex-col leading-tight">
