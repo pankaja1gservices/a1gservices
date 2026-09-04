@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { HeroVideo } from "./HeroVideo";
 import { LoanTabs } from "./LoanTabs";
 import { Marquee } from "./Marquee";
-import consultantImg from "@/assets/hero-consultant.jpg";
+import consultantImg from "@/assets/hero-consultant.png";
 
 export function Hero() {
   return (
@@ -58,7 +58,7 @@ export function Hero() {
               alt="A1 Global financial consultant ready to assist with loan enquiries"
               width={1024}
               height={1280}
-              className="h-72 w-auto object-contain drop-shadow-2xl sm:h-96 lg:h-[30rem] [mask-image:linear-gradient(to_bottom,black_82%,transparent)]"
+              className="h-72 w-auto object-contain drop-shadow-2xl sm:h-96 lg:h-[30rem]"
             />
           </div>
         </div>
