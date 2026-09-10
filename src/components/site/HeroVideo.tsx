@@ -1,11 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import consultingAsset from "@/assets/hero-consulting.mp4.asset.json";
-import homeKeysAsset from "@/assets/hero-home-keys.mp4.asset.json";
 import heroImage from "@/assets/hero-finance.jpg";
 
 const CLIPS = [
-  { src: consultingAsset.url, label: "Consultation" },
-  { src: homeKeysAsset.url, label: "New home" },
+  { src: "/videos/hero-consulting.mp4", label: "Consultation" },
+  { src: "/videos/hero-home-keys.mp4", label: "New home" },
 ];
 
 /** Rotating, muted, looping hero showreel with a still-image fallback poster. */
