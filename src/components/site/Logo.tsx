@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import logoAsset from "@/assets/a1-logo-v3.png.asset.json";
+import logoUrl from "@/assets/a1-logo-v3.png";
 
 type LogoProps = {
   className?: string;
@@ -12,7 +12,7 @@ export function Logo({
 }: LogoProps) {
   return (
     <img
-      src={logoAsset.url}
+      src={logoUrl}
       alt={title}
       className={cn("block object-contain", className)}
     />
