@@ -96,6 +96,34 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Developed-by credit band */}
+        <div className="mt-14">
+          <div className="rounded-2xl border border-gold/30 bg-navy-foreground/[0.06] px-6 py-10 text-center shadow-soft sm:px-12">
+            <p className="text-[0.65rem] font-medium uppercase tracking-[0.4em] text-gold">
+              Developed by
+            </p>
+            <a
+              href="https://owlnestmedia.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 block font-display text-2xl font-bold tracking-tight text-navy-foreground transition-colors hover:text-gold sm:text-4xl md:text-5xl"
+            >
+              OwlNest Media <span className="whitespace-nowrap">Private Limited</span>
+            </a>
+            <a
+              href="https://owlnestmedia.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-2 rounded-full border border-gold/40 px-5 py-2 text-sm font-semibold tracking-wide text-gold transition-colors hover:bg-gold hover:text-navy"
+            >
+              owlnestmedia.com
+            </a>
+            <p className="mx-auto mt-4 max-w-md text-xs leading-relaxed text-navy-foreground/60">
+              Website design, development and digital presence crafted by OwlNest Media.
+            </p>
+          </div>
+        </div>
+
         <div className="mt-14 border-t border-navy-foreground/15 pt-8">
           <p className="text-xs leading-relaxed text-navy-foreground/55">
             <strong className="font-semibold text-navy-foreground/75">Disclaimer:</strong> Loan
